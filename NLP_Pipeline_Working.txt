@@ -12,3 +12,34 @@ User Message: "Where is my parcel right now?"
 [Model Prediction] (src/prediction.py)
    - The Calibrated LinearSVC computes a probability distribution across all 20 intents
    - Predicts: Intent = "order_tracking", Confidence = 78.5%
+
+
+
+Customer Types Message: "I want to cancel my subscription"
+                     │
+                     ▼
+             🔤 PREPROCESSING
+   (Clean text, lowercase, split into tokens)
+                     │
+                     ▼
+           🧠 NLP INTENT MODEL
+   (Convert tokens to numbers → Predict intent & confidence)
+   Result: Intent = "cancel_subscription", Confidence = 96%
+                     │
+                     ▼
+         ⚖️ ESCALATION DECISION ENGINE
+                     │
+     ┌───────────────┴───────────────┐
+     ▼                               ▼
+Confidence ≥ Threshold (e.g. 75%)    Confidence < Threshold OR User asks for agent
+     │                               │
+     ▼                               ▼
+🤖 BOT RESPONDS AUTOMATICALLY        🚨 ESCALATE TO HUMAN
+"I can help you cancel..."          "Transferring you to an agent..."
+                                     Pass conversation to Agent Queue
+                     │                               │
+                     └───────────────┬───────────────┘
+                                     ▼
+                          📊 LOG & METRICS DATABASE
+                (Save timestamp, user query, intent, confidence,
+                 handled_by: "BOT" or "HUMAN")
