@@ -1,0 +1,14 @@
+User Message: "Where is my parcel right now?"
+      ↓
+[Preprocessing] (src/preprocessing.py)
+   - Converts to lowercase: "where is my parcel right now"
+   - Expands contractions (e.g. "can't" -> "cannot")
+   - Cleans punctuation while preserving negations ("not", "no") and question markers ("where", "how")
+      ↓
+[Vectorization] (src/training.py & src/prediction.py)
+   - TF-IDF transforms the clean text into a numerical vector using word unigrams and bigrams
+   - Sublinear term frequency scaling dampens the effect of repetitive words
+      ↓
+[Model Prediction] (src/prediction.py)
+   - The Calibrated LinearSVC computes a probability distribution across all 20 intents
+   - Predicts: Intent = "order_tracking", Confidence = 78.5%
