@@ -1,0 +1,10 @@
+1.1 Project Overview
+    In modern subscription-based businesses, such as telecommunications and digital SaaS platforms, customer retention is a critical driver of profitability. Acquiring new customers costs 5 to 7 times more than retaining existing accounts. This project aims to design and implement an end-to-end Machine Learning (ML) pipeline using Python to predict customer churn and uncover behavioral clusters for proactive retention.
+
+1.2 Scope of the Solution
+    The project spans four distinct operational phases aligned with the standard data science lifecycle:
+
+    1. Comprehensive data preprocessing and exploratory data analysis (EDA).
+    2. Supervised model training and benchmarking (Logistic Regression, Decision Trees, Random Forest, K-Nearest Neighbours).
+    3. Unsupervised behavioural clustering (K-Means and Hierarchical Clustering) to segment customer personas.
+    4. Model serialisation and containerised API deployment using FastAPI for real-time risk scoring.
