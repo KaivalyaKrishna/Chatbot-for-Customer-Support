@@ -1,0 +1,21 @@
+3.1 Primary Project Objectives
+
+    1. Data Preprocessing & Quality Assurance: Build a robust, reproducible data cleaning and transformation pipeline in Python using Pandas and NumPy to handle missing values, scale numerical features, and encode categorical variables.
+    2. Supervised Model Benchmarking: Train, compare, and hyperparameter-tune at least four supervised algorithms (Logistic Regression, Decision Trees, Random Forest, and K-Nearest Neighbours) to identify the optimal churn predictor.
+    3. Unsupervised Behavioural Segmentation: Apply K-Means and Hierarchical Clustering combined with Principal Component Analysis (PCA) to extract actionable customer cohorts.
+    4. Production-Ready Deployment: Package the trained model pipeline into a lightweight web API using FastAPI/Flask with complete serialisation via Joblib.
+
+3.2 Technical Evaluation Metrics
+Because customer churn datasets exhibit strong class imbalance (~75% retained vs. ~25% churned), standard accuracy is a misleading metric. The project will prioritize:
+
+    1. Recall (Sensitivity): Target ≥ 0.75. Measures the percentage of actual churners the model correctly flags. In churn prevention, missing a customer who leaves (False Negative) is much more costly than offering a discount to someone who stays (False Positive).
+    2. Precision: Target ≥ 0.70. Ensures marketing retention budgets are not wasted on customers who had no intention of leaving.
+    3. F1-Score: Target ≥ 0.78. The harmonic mean of Precision and Recall, balancing detection coverage with budget efficiency.
+    4. ROC-AUC Score: Target ≥ 0.85. Measures the model's ability to discriminate between churners and non-churners across all classification thresholds.
+    5. Silhouette Score (Clustering): Target ≥ 0.55. Evaluates the separation and cohesion of customer clusters identified by K-Means.
+
+3.3 Business Impact Metrics
+
+    1. Churn Rate Reduction: Expected 3–5% drop in annual customer turnover through targeted intervention.
+    2. Retention Campaign ROI: Improve campaign conversion rate by targeting only high-risk, high-lifetime-value segments.
+    3. Inference Latency: The prediction API must return a churn probability in under 100 ms per request.
