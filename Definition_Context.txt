@@ -1,0 +1,31 @@
+2.1 The Business Problem
+    When customers discontinue their service (churn), the business loses steady recurring revenue and risks market share loss. Currently, retention strategies are purely reactive—customer service reaches out only after a cancellation request has been filed. The goal is to shift to a predictive retention strategy that identifies at-risk accounts 30 to 60 days before they decide to leave.
+
+2.2 Machine Learning Problem Formulation
+    Mathematically, this problem is framed as:
+
+        1. Supervised Binary Classification: Predicting the probability 𝑃 (Churn = 1 ∣ 𝑋), where target Y ∈ {0,1} (0 = Retained, 1 = Churned).
+        2. Unsupervised Behavioral Segmentation: Discovering K natural clusters among customers based on tenure, service usage, and billing patterns without pre-labeled categories.
+
+2.3 Pipeline Inputs (Feature Schema)
+    The machine learning model will ingest customer attributes across three primary categories:
+
+        1. Customer Demographics: Senior citizen status, partner/dependent status.
+        2. Account & Subscription Information: Account tenure (in months), contract type (month-to-month, one-year, two-year), payment method, and paperless billing.
+        3. Services Subscribed: Internet service type (DSL, Fiber optic), online security, tech support, streaming TV/movies.
+        4. Financial Metrics: Monthly charges ($ amount) and total lifetime charges ($ amount).
+
+2.4 Technical Challenges
+
+    1. Class Imbalance: Typically, only 20–25% of customers churn in a given period. If an algorithm simply predicts "No Churn" for every customer, it achieves 75–80% accuracy while failing completely at its business goal.
+    2. Data Quality & Missing Values: Financial fields like total charges often have whitespace or missing entries for brand-new customers with 0 months of tenure.
+    3. Mixed Data Types: High proportion of categorical variables requiring appropriate encoding techniques (One-Hot Encoding vs. Ordinal Encoding).
+
+2.5 Expected Outcomes & Business Deliverables
+
+    1. A trained, calibrated classification model delivering an F1-score ≥ 0.80 and ROC-AUC ≥ 0.85.
+    2. Defined customer personas (e.g., Budget Month-to-Month High Risk, Long-Term Stable Bundled Users).
+    3. A lightweight REST API endpoint that accepts customer data in JSON format and outputs:
+        • Churn Probability (e.g., 87%)
+        • Risk Category (High, Medium, Low)
+        • Recommended Customer Segment for targeted promotions.
