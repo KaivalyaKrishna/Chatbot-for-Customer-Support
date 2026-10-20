@@ -1,0 +1,26 @@
+5.1 Phased Implementation Breakdown (32 Total Hours)
+    The project is organised into four sequential execution phases mapped directly to the four-week internship lifecycle. Each phase corresponds to an estimated 8 hours of focused technical effort, totalling 32 hours across the project.
+
+    Phase 1 (Week 1): Data Preprocessing, Cleaning & Exploratory Data Analysis (8 Hours)
+
+        1. Tasks & Activities: Ingest raw customer churn data, perform automated schema validation, and conduct a comprehensive missing value analysis. Execute Exploratory Data Analysis (EDA) to map distributions, correlation heatmaps, and relationships between tenure, monthly charges, and churn. Perform outlier detection, apply categorical encoding (One-Hot Encoding for multi-class features and binary mapping for two-level features), and normalize continuous variables using Scikit-learn’s StandardScaler.
+        2. Phase Milestone: Complete, leak-free training and testing datasets ready for model ingestion.
+        3. Primary Deliverable: Cleaned dataset files, an exploratory Jupyter Notebook with data visualizations, and the initial data preprocessing report.
+
+    Phase 2 (Week 2): Supervised Classification Benchmarking (8 Hours)
+
+        1. Tasks & Activities: Establish a baseline heuristic model (Dummy Classifier and standard Logistic Regression). Implement and train three additional non-linear supervised algorithms: Decision Trees, Random Forest, and K-Nearest Neighbors (KNN). Enforce Stratified 5-Fold Cross-Validation across all models to ensure evaluation reliability. Collect and benchmark core evaluation metrics including Accuracy, Precision, Recall, and F1-Score.
+        2. Phase Milestone: Identification of the top-performing baseline model family.
+        3. Primary Deliverable: Supervised Model Evaluation Report containing comparative performance tables and metric visualisations.
+
+    Phase 3 (Week 3): Unsupervised Clustering, Dimensionality Reduction & Hyperparameter Tuning (8 Hours)
+
+        1. Tasks & Activities: Conduct feature selection and apply Principal Component Analysis (PCA) for dimensionality reduction and 2D/3D cluster visualisation. Implement K-Means clustering, determining the optimal number of customer personas (K) using the Elbow Method and Silhouette Analysis. Apply Hierarchical (Agglomerative) Clustering and visualise customer relationships via dendrograms. Perform systematic hyperparameter tuning on the champion supervised model using GridSearchCV.
+        2. Phase Milestone: Final optimised champion classification model and clearly separated customer behavioural clusters.
+        3. Primary Deliverable: Customer Segmentation Persona Profiles, ROC-AUC diagnostic curves, and optimised model parameters.
+
+    Phase 4 (Week 4): Model Packaging, FastAPI Deployment & Capstone Delivery (8 Hours)
+
+        1. Tasks & Activities: Export and serialise the complete preprocessing and modelling pipeline into reusable .joblib binary artefacts. Build a production-ready REST API using FastAPI with dedicated /health and /predict endpoints. Implement input data validation and schema enforcement using Pydantic models. Conduct end-to-end integration and latency testing, finalise GitHub repository documentation, and assemble the comprehensive capstone project presentation.
+        2. Phase Milestone: Operational real-time prediction microservice running locally or in a containerised environment.
+        3. Primary Deliverable: Fully documented GitHub repository, working FastAPI prediction service, and the final capstone project report.
