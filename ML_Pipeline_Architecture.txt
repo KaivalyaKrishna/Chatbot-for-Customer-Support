@@ -31,9 +31,9 @@
 
 4.2 Modular Component Breakdown
 
-   1. Stage 1 — Ingestion Module: Loads raw tabular datasets, performs schema verification, and validates column data types.
-   2. Stage 2 — Data Cleaning & Preprocessing Module: Handles whitespace replacement in billing features, median imputation for continuous columns, One-Hot Encoding for multi-class categoricals, and binary mapping (0/1) for binary flags.
-   3. Stage 3 — Transformation Pipeline: Uses sklearn.pipeline.Pipeline and ColumnTransformer to prevent data leakage during train/test splits. Applies StandardScaler to numerical inputs (Tenure, MonthlyCharges, TotalCharges).
-   4. Stage 4 — Modeling Engine: Splits data using a 80/20 stratified split. Fits supervised baselines and explores hyperparameter grids (n_estimators, max_depth, learning_rate). Concurrently, executes K-Means clustering with the Elbow Method to identify optimal cluster count (K).
-   5. Stage 5 — Model Validation & Serialization: Computes confusion matrix, classification report, and ROC curves. The champion model and scaler transformers are serialized as .joblib artifacts.
-   6. Stage 6 — Serving & Inference Service: A FastAPI application loads the serialized artifacts at startup and exposes a /predict POST endpoint accepting JSON payloads, returning predictions with confidence intervals.
+   1. Stage 1 - Ingestion Module: Loads raw tabular datasets, performs schema verification, and validates column data types.
+   2. Stage 2 - Data Cleaning & Preprocessing Module: Handles whitespace replacement in billing features, median imputation for continuous columns, One-Hot Encoding for multi-class categoricals, and binary mapping (0/1) for binary flags.
+   3. Stage 3 - Transformation Pipeline: Uses sklearn.pipeline.Pipeline and ColumnTransformer to prevent data leakage during train/test splits. Applies StandardScaler to numerical inputs (Tenure, MonthlyCharges, TotalCharges).
+   4. Stage 4 - Modeling Engine: Splits data using a 80/20 stratified split. Fits supervised baselines and explores hyperparameter grids (n_estimators, max_depth, learning_rate). Concurrently, executes K-Means clustering with the Elbow Method to identify optimal cluster count (K).
+   5. Stage 5 - Model Validation & Serialization: Computes confusion matrix, classification report, and ROC curves. The champion model and scaler transformers are serialized as .joblib artifacts.
+   6. Stage 6 - Serving & Inference Service: A FastAPI application loads the serialized artifacts at startup and exposes a /predict POST endpoint accepting JSON payloads, returning predictions with confidence intervals.

@@ -8,4 +8,5 @@
 
 9.2 Conclusion
     This project plan provides an exhaustive, structured blueprint for developing an end-to-end Machine Learning pipeline tailored for customer churn prediction and behavioural segmentation. By addressing customer turnover as both a predictive classification problem and a customer discovery challenge through clustering, the proposed system delivers actionable business intelligence rather than isolated statistical predictions.
+    
     With clear milestones established across a 32-hour phased implementation schedule, robust risk mitigation strategies for class imbalance and data leakage, and a production-ready API serving architecture, this plan ensures technical feasibility, high performance, and readiness for subsequent execution phases.
