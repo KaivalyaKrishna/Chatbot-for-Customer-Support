@@ -1,0 +1,32 @@
+7.1 Analysis of Project Risks and Mitigation Plans
+    Building a production-viable machine learning system introduces several technical, operational, and data-related risks. Below is the detailed identification of each major risk alongside its severity and proactive mitigation plan:
+
+    Risk 1: Target Class Imbalance
+
+        1. Context: In typical telecom customer datasets, retained customers heavily outnumber churned customers (approximately 75% non-churn vs. 25% churn). Standard classifiers trained on imbalanced data often bias heavily toward the majority class, yielding deceptive accuracy while failing to detect actual churners.
+        2. Impact: High | Likelihood: High
+        3. Mitigation Strategy: The pipeline will not rely on raw accuracy. Optimization will prioritize Recall and F1-score. Algorithm-level class weighting (class_weight='balanced') will be configured in Logistic Regression and Random Forest models. If necessary, Synthetic Minority Over-sampling Technique (SMOTE) will be applied strictly within training folds.
+
+    Risk 2: Data Leakage during Feature Scaling and Encoding
+
+        1. Context: Computing global scaling parameters (mean and standard deviation) or encoding categories across the entire dataset before train/test splitting leaks test set information into the training phase, producing overly optimistic validation results that fail in production.
+        2. Impact: High | Likelihood: Medium
+        3. Mitigation Strategy: All preprocessing and scaling operations will be encapsulated within Scikit-learn Pipeline and ColumnTransformer constructs. Transformers will strictly use .fit() only on the training split, and .transform() on test and real-time inference data.
+
+    Risk 3: Model Overfitting on High-Depth Trees
+
+        1. Context: Complex models like Decision Trees and deep Random Forests can easily memorise training noise, leading to strong training accuracy but poor generalisation on unseen customer accounts.
+        2. Impact: Medium | Likelihood: High
+        3. Mitigation Strategy: Strict regularisation constraints will be applied, including setting maximum tree depth (max_depth), minimum sample splits (min_samples_split), and minimum samples per leaf (min_samples_leaf). Model selection will be evaluated exclusively on out-of-fold cross-validation scores.
+
+    Risk 4: Handling Unseen or Out-of-Vocabulary Categories at Inference Time
+
+        1. Context: In production, new customers may present previously unrecorded payment methods, plans, or missing optional fields, causing the model to throw runtime conversion errors.
+        2. Impact: Medium | Likelihood: Medium
+        3. Mitigation Strategy: The One-Hot Encoder will be configured with handle_unknown='ignore' to assign zero-vectors to unfamiliar categories rather than raising exceptions. Furthermore, strict input data types and sensible defaults will be enforced at the API boundary using Pydantic data schemas.
+
+    Risk 5: Prediction Latency Bottlenecks
+
+        1. Context: Real-time customer support or web interfaces require sub-second responses. Overly complex feature engineering steps during inference can introduce noticeable delay.
+        2. Impact: Medium | Likelihood: Low
+        3. Mitigation Strategy: The preprocessing pipeline will utilize vectorized NumPy operations and pre-fitted Scikit-learn pipelines. The REST API built with FastAPI will run asynchronously with Uvicorn workers, guaranteeing an average inference latency well under 100 milliseconds per query.
