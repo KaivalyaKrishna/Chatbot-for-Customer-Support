@@ -1,0 +1,10 @@
+6.1 Critical Path Identification
+    In project management, the Critical Path represents the sequence of dependent tasks that directly determines the minimum project completion time. Any delay in these steps delays the entire delivery:
+
+    Data Ingestion ⟶ Leak-Free Preprocessing ⟶ Supervised Benchmark ⟶ Champion Selection ⟶ Serialisation ⟶ API Integration
+
+6.2 Key Blocking Dependencies
+
+    1. Data Preprocessing Blocks All Modelling: Model algorithms cannot accept raw string categories or NaN values; Phase 1 must be 100% complete before Phase 2 begins.
+    2. Train/Test Splitting Blocks Scaler Fitting: The StandardScaler and encoders must be fit only on the training split [X(train)] and transformed onto the test split [X(test)] to eliminate Data Leakage.
+    3. Model Selection Blocks API Development: FastAPI endpoints cannot be finalised until the model's feature schema, preprocessing steps, and .joblib serialisation format are locked in Phase 3.
