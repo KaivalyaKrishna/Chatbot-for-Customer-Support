@@ -1,0 +1,11 @@
+9.1 Strategic Roadmap for Implementation
+    The strategic roadmap transitions this project from an architectural blueprint into a fully realised, production-grade machine learning system. The implementation strategy follows four focused execution principles:
+
+        1. Principle 1 - Data Integrity First: Prioritise rigorous exploratory data analysis, clean data transformations, and leak-free cross-validation boundaries before tuning complex models. Clean data is the single most important factor for reliable predictions.
+        2. Principle 2 - Progressive Model Complexity: Begin with simple, highly interpretable baseline algorithms (Logistic Regression and single Decision Trees) to establish benchmark metrics before progressing toward ensemble methods (Random Forests) and unsupervised clustering techniques.
+        3. Principle 3 - Business-Centric Evaluation: Maintain strict alignment between statistical metrics and operational impact. Prioritising Recall and F1-score ensures the retention team effectively captures the highest percentage of at-risk accounts without inflating false alerts.
+        4. Principle 4 - Modular and Reusable Deployment: Decouple the data processing and modelling logic into serialised pipelines using Joblib. This enables the serving layer (FastAPI) to remain lightweight, maintainable, and independent of the training environment.
+
+9.2 Conclusion
+    This project plan provides an exhaustive, structured blueprint for developing an end-to-end Machine Learning pipeline tailored for customer churn prediction and behavioural segmentation. By addressing customer turnover as both a predictive classification problem and a customer discovery challenge through clustering, the proposed system delivers actionable business intelligence rather than isolated statistical predictions.
+    With clear milestones established across a 32-hour phased implementation schedule, robust risk mitigation strategies for class imbalance and data leakage, and a production-ready API serving architecture, this plan ensures technical feasibility, high performance, and readiness for subsequent execution phases.
