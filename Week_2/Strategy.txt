@@ -1,0 +1,9 @@
+2. Dataset Partitioning & Stratification Strategy
+
+    To ensure unbiased and realistic performance evaluation, the dataset containing 7,043 customer records was divided using Scikit-learn’s train_test_split:
+
+        1. Feature Matrix (X): Encompasses all 30 preprocessed features, including normalized continuous variables (tenure, MonthlyCharges, TotalCharges) and One-Hot Encoded service and contract attributes.
+        2. Target Vector (y): The binary churn indicator, where 0 denotes a retained customer and 1 denotes a churned customer.
+        3. Split Ratio: An 80/20 train-test split was enforced, allocating 5,634 samples (80%) for model training and 1,409 samples (20%) for out-of-sample evaluation.
+        4. Stratification Enforcement: Because the raw dataset exhibits a 73.5% non-churn and 26.5% churn distribution, stratify=y was applied. This guarantees that both the training and testing sets reflect identical class proportions, preventing sample selection bias.
+        5. Reproducibility: A fixed seed (random_state=42) was applied across all random number generators.
