@@ -1,0 +1,29 @@
+3. Supervised Classification Algorithms Implemented
+
+    3.1 Logistic Regression (Linear Probabilistic Baseline)
+
+        1. Mathematical Basis: Fits a linear decision boundary using the logistic sigmoid function, mapping weighted linear combinations of input features to probability values between 0 and 1.
+        2. Hyperparameters: max_iter=1000, random_state=42.
+        3. Strengths: Highly interpretable, computationally efficient, and provides calibrated probabilities.
+        4. Weaknesses: Cannot naturally capture complex non-linear feature interactions without manual polynomial expansion.
+
+    3.2 Decision Tree Classifier (Rule-Based Non-Linear Model)
+
+        1. Mathematical Basis: Recursively splits the feature space into orthogonal decision regions by selecting splits that maximize information gain (minimizing Gini Impurity).
+        2. Hyperparameters: Constrained with max_depth=5 to prevent the tree from memorizing training noise, random_state=42.
+        3. Strengths: Highly transparent decision rules that mimic human logic; completely invariant to monotonic feature scaling.
+        4. Weaknesses: Prone to high variance and unstable predictions when small variations occur in the training set.
+
+    3.3 Random Forest Classifier (Ensemble Bagging Architecture)
+
+        1. Mathematical Basis: Constructs an ensemble of 100 decorrelated decision trees using Bootstrap Aggregation (bagging) and random feature subspace sampling. The final prediction represents the majority vote across all trees.
+        2. Hyperparameters: n_estimators=100, max_depth=8, random_state=42.
+        3. Strengths: Substantially reduces model variance without increasing bias; highly robust against overfitting and capable of capturing non-linear feature interactions.
+        4. Weaknesses: Increased computational cost and loss of direct interpretability compared to single trees.
+
+    3.4 K-Nearest Neighbors Classifier (Instance-Based Non-Parametric Model)
+
+        1. Mathematical Basis: Classifies unseen test instances by computing Euclidean distances across the multidimensional feature space and assigning the majority class among the K closest training instances.
+        2. Hyperparameters: n_neighbors=7, utilizing Euclidean distance weighting.
+        3. Strengths: Non-parametric nature allows it to model arbitrary decision boundaries without rigid distribution assumptions.
+        4. Weaknesses: Computationally expensive during inference (O(N) test latency) and sensitive to irrelevant feature dimensions.
