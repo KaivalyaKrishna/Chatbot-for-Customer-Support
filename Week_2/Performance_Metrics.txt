@@ -1,0 +1,39 @@
+4. Performance Metrics & Comparative Evaluation
+
+    All models were evaluated strictly on the unseen testing set (1,409 samples). Below is the comprehensive metric comparison:
+
+    Random Forest Classifier:
+
+        Accuracy: 80.20%
+        Precision: 66.30%
+        Recall: 54.81%
+        F1-Score: 0.6001
+        ROC-AUC: 0.8445
+        Assessment: Top-performing champion model across all critical discriminative metrics.
+
+    Logistic Regression:
+
+        Accuracy: 80.06%
+        Precision: 65.48%
+        Recall: 54.28%
+        F1-Score: 0.5934
+        ROC-AUC: 0.8418
+        Assessment: Strong, competitive linear baseline with performance closely matching the ensemble forest.
+
+    Decision Tree (Max Depth = 5):
+
+        Accuracy: 78.78%
+        Precision: 62.42%
+        Recall: 51.07%
+        F1-Score: 0.5617
+        ROC-AUC: 0.8172
+        Assessment: Acceptable baseline, but inferior recall due to rigid axis-aligned decision partitions.
+
+    K-Nearest Neighbors (K = 7):
+
+        Accuracy: 77.22%
+        Precision: 57.73%
+        Recall: 50.80%
+        F1-Score: 0.5404
+        ROC-AUC: 0.7902
+        Assessment: Lowest discriminative capability; suffers from distance distortion in a 30-dimensional encoded feature space.
