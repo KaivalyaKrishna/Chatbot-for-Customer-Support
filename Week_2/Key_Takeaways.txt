@@ -1,0 +1,5 @@
+6. Key Takeaways & Strategic Next Steps
+
+    Ensemble Methods Outperform Single Models: The Random Forest Classifier achieved the highest F1-Score and ROC-AUC, confirming that aggregating randomized decision trees successfully counters the noise inherent in individual trees.
+    Class Imbalance Impact: While overall accuracy reached ~80%, Recall remained at ~55%, indicating that many churners are still missed under default 0.5 decision thresholds. This establishes the need for threshold tuning and hyperparameter optimization.
+    Week 3 Strategic Direction: In the upcoming week, the project will implement Unsupervised Clustering (K-Means and Hierarchical Clustering) to group customers into behavioral archetypes, followed by formal hyperparameter tuning (GridSearchCV) to optimize the champion Random Forest model.
