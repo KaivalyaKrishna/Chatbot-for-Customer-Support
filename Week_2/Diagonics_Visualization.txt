@@ -1,0 +1,17 @@
+5. Diagnostic Visualizations & Error Analysis
+
+    5.1 Confusion Matrix Analysis (Champion Model: Random Forest)
+    
+        The Confusion Matrix computed on the test set highlights the distribution of classification outcomes:
+
+            True Negatives (TN): 925 retained customers were correctly identified as staying.
+            False Positives (FP): 110 retained customers were incorrectly predicted to churn. In business terms, this represents a low operational cost (offering a small promotional incentive to a customer who wasn't leaving).
+            False Negatives (FN): 169 churning customers were missed by the model. This represents the primary business vulnerability, as these accounts leave without proactive retention outreach.
+            True Positives (TP): 205 churning customers were successfully flagged, allowing customer retention teams to intervene in advance.
+
+    5.2 Comparative ROC Curve Analysis
+    
+        The Receiver Operating Characteristic (ROC) curve evaluates model performance across all possible probability thresholds (0.0 to 1.0):
+
+        Both Random Forest and Logistic Regression demonstrated excellent discrimination curves, substantially outperforming the diagonal random baseline (AUC = 0.50).
+        The Random Forest achieved the highest Area Under the Curve (AUC = 0.8445), maintaining a superior True Positive Rate at lower False Positive rates compared to KNN and individual Decision Trees.
