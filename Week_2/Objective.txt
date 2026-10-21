@@ -1,0 +1,10 @@
+1. Executive Summary & Week 2 Objectives
+
+    The primary objective of Week 2 is to design, train, and benchmark supervised machine learning classification models on the preprocessed Telco Customer Churn dataset. Following the successful cleaning, categorical encoding, and feature normalization accomplished in Week 1, the goal is to evaluate multiple classification paradigms to identify the optimal algorithm for predicting customer churn.
+
+    The key objectives achieved in this phase include:
+
+        1. Partitioning the dataset into stratified training and testing subsets to preserve class distributions.
+        2. Training four supervised learning algorithms representing distinct mathematical paradigms: linear models, rule-based decision trees, ensemble bagging, and instance-based nearest neighbors.
+        3. Quantitatively comparing model performance across five core evaluation metrics: Accuracy, Precision, Recall, F1-Score, and Area Under the ROC Curve (ROC-AUC).
+        4. Generating diagnostic visualizations including Confusion Matrices and comparative ROC curves to evaluate trade-offs between false alarms and missed churners.
