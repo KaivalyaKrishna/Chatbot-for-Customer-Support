@@ -1,0 +1,34 @@
+Section 6: Executive Capstone Presentation Outline (5 Slides)
+
+    Slide 1: Title & Business Problem
+        
+        Headline: AI-Powered Customer Churn Prediction & Retention Microservice
+        Key Point: Acquiring new customers costs 5x to 7x more than retaining existing ones. Current retention efforts are purely reactive.
+        Goal: Shift to an automated, predictive retention strategy to save high-value recurring revenue.
+
+    Slide 2: Data Pipeline & Preprocessing
+
+        Headline: From Raw Data to Cleaned Signals
+        Key Point: 7,043 customer accounts analyzed across demographic, service, and billing features.
+        Technical Execution: Imputed hidden missing values in TotalCharges, applied One-Hot Encoding with multicollinearity avoidance, and standardized continuous features using StandardScaler without data leakage.
+
+    Slide 3: Model Benchmarking & Hyperparameter Tuning
+
+        Headline: Identifying the Champion Architecture
+        Key Point: Benchmarked 4 algorithms: Logistic Regression, Decision Trees, Random Forest, and KNN.
+        Winning Model: Tuned Random Forest with class_weight='balanced' via 5-Fold Stratified Cross-Validation.
+        Results: Achieved 76.2% Recall (catching over three-quarters of churners) and an ROC-AUC score of 0.85.
+
+    Slide 4: Customer Behavioral Personas (Unsupervised Clustering)
+        
+        Headline: Understanding Who Churns and Why
+        Key Point: K-Means (K=3) and PCA dimensionality reduction identified 3 distinct customer segments:
+            Cluster 0: High-Risk New Subscribers (urgent onboarding discounts needed).
+            Cluster 1: High-Value Champions (VIP loyalty rewards).
+            Cluster 2: Low-Touch Budget Users (basic maintenance).
+
+    Slide 5: Production Deployment & Serving
+
+        Headline: Real-Time Scoring Microservice
+        Key Point: Serialized pipeline into Joblib artifacts; built asynchronous REST API using FastAPI.
+        Performance: Sub-100ms response time returning Churn Probability, Risk Tier (High/Medium/Low), Cluster ID, and automated action recommendations.
