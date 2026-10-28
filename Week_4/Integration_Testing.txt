@@ -1,0 +1,15 @@
+4. Integration Testing & Production Validation
+    
+    End-to-end integration tests were conducted using FastAPI's TestClient to simulate live API requests across two distinct customer archetypes:
+        
+        Test Case 1 - High-Risk At-Risk Subscriber:
+
+            Profile: 2 months tenure, month-to-month contract, fiber optic internet, paying $95.00/month via electronic check.
+            API Output: Predicted "Churn", Churn Probability ~82%, Risk Level "High", Assigned "Cluster 0", Action "Urgent retention outreach".
+            Validation: Correctly identified early churn indicators and triggered immediate retention intervention.
+
+        Test Case 2 - Low-Risk Loyal Subscriber:
+
+            Profile: 60 months tenure, two-year contract, phone-only service, paying $25.00/month via automatic credit card billing.
+            API Output: Predicted "Retained", Churn Probability ~8%, Risk Level "Low", Assigned "Cluster 1", Action "Standard customer care".
+            Validation: Accurately recognized strong customer retention signals without raising false alarms.
