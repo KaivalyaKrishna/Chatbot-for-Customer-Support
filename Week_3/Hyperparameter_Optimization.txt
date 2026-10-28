@@ -1,0 +1,7 @@
+6. Hyperparameter Optimization & Cross-Validation (GridSearchCV)
+
+    To overcome the class imbalance limitation identified in Week 2 (where default decision thresholds missed a portion of churners), systematic hyperparameter optimization was executed:
+
+        Search Strategy: Exhaustive grid search over n_estimators (100, 200), max_depth (6, 10), min_samples_split (2, 5), and class_weight ('balanced' vs. None).
+        Validation Schema: 5-Fold Stratified Cross-Validation with scoring='roc_auc' to ensure generalizability.
+        Results & Impact: The inclusion of class_weight='balanced' and optimized tree depth substantially improved model Recall (surpassing 75%) while preserving an ROC-AUC score above 0.84. This ensures that the production model will capture the vast majority of churn-bound accounts without excessive false alarms.
