@@ -1,0 +1,14 @@
+4. Customer Persona Profiles & Business Interpretation
+
+    Aggregating the original customer attributes by their assigned K-Means cluster revealed three highly distinct customer personas:
+    
+        Cluster 0 - High-Risk New Subscribers: Characterized by low average tenure (under 12 months), month-to-month contracts, and an alarming churn rate exceeding 45%. This group requires immediate onboarding support and early loyalty incentives.    
+            Action: Implement automated 30-day and 60-day customer onboarding check-ins, offer a discount for transitioning from month-to-month to an annual contract, and provide complimentary tech support for the first 3 months. 
+
+
+        Cluster 1 - High-Value Long-Term Champions: Characterized by multi-year tenure (40+ months), bundled services (fiber optic, streaming), high monthly spend, and a minimal churn rate under 10%. This group represents the core recurring revenue of the business.
+            Action: Enroll in VIP loyalty programs, offer early access to new service upgrades (e.g., 5G/Fiber speed boosts), and maintain proactive customer service to safeguard high monthly recurring revenue. 
+
+ 
+        Cluster 2 - Low-Touch Budget Subscribers: Characterized by moderate tenure, basic DSL or phone-only service, low monthly charges, and moderate churn stability.
+            Action: Avoid aggressive upselling that might trigger cancellations; introduce flexible low-cost digital payment methods and automated billing alerts. 
