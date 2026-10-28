@@ -1,0 +1,12 @@
+1. Executive Summary & Capstone Objectives
+
+    The capstone milestone marks the completion of the 4-week machine learning lifecycle. 
+    The objective of Week 4 is to bridge the gap between model training and real-world deployment by packaging the complete data science pipeline into an operational, low-latency web microservice.
+
+    Key capstone deliverables accomplished in this phase include:
+        
+        Serializing all preprocessors, encoders, the champion tuned Random Forest classifier, and the K-Means clustering model into reusable binary artifacts using Joblib.
+        Developing a robust, production-grade REST API application using FastAPI.
+        Implementing strict schema validation, type safety, and default fallbacks using Pydantic BaseModels.
+        Designing automated business logic within the prediction engine that outputs churn probabilities, risk tiers, behavioral cluster segments, and recommended retention actions.
+        Executing automated unit and integration tests via FastAPI TestClient to simulate live production inference across distinct customer profiles.
