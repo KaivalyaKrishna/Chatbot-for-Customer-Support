@@ -1,8 +1,10 @@
 1. Executive Summary & Week 3 Objectives
 
-    The Week 3 milestone expands the customer churn system into unsupervised customer discovery and advanced model optimization. While supervised models predict individual churn likelihood, unsupervised clustering reveals the underlying behavioral personas driving customer actions.
+    The Week 3 milestone expands the customer churn system into unsupervised customer discovery and advanced model optimization. 
+    While supervised models predict individual churn likelihood, unsupervised clustering reveals the underlying behavioral personas driving customer actions.
     
     Key objectives achieved in Week 3:
+
         Applied Principal Component Analysis (PCA) to compress high-dimensional feature spaces for 2D visualization.
         Implemented K-Means clustering, determining the optimal number of customer personas (KKK) using the Elbow Method and Silhouette Analysis.
         Constructed Hierarchical Agglomerative Clustering dendrograms using Ward’s linkage.

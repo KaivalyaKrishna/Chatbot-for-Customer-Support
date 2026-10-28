@@ -1,0 +1,7 @@
+2. Dimensionality Reduction with Principal Component Analysis (PCA)
+    
+    With 30 preprocessed feature dimensions, direct geometric visualization of customer behavior is impossible. 
+    Principal Component Analysis was implemented to identify the orthogonal axes of maximum variance:
+
+        PCA(n_components=2) rotated the multidimensional space into two uncorrelated components (PC1 and PC2).
+        The top two components successfully captured the dominant variance, enabling effective 2D scatter plots of cluster boundaries without distorting natural customer relationships.
