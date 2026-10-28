@@ -1,0 +1,23 @@
+3. FastAPI Microservice Architecture
+    
+    The serving layer was constructed using FastAPI, chosen for its high asynchronous throughput, automatic OpenAPI/Swagger documentation, and native data validation via Pydantic:
+
+    3.1 Schema Enforcement (Pydantic Data Contracts):
+        A CustomerInput data model was established with strict type definitions and sample values. This guarantees that requests missing required fields or containing invalid data types are caught and rejected at the API gateway with clear error responses before reaching the ML model.
+
+
+    3.2 Health Check Endpoint (GET /health):
+        Provides a lightweight endpoint to confirm microservice operational status, facilitating integration with container orchestration tools like Kubernetes or Docker health probes.
+
+
+    3.3 Real-Time Prediction Endpoint (POST /predict):
+        Accepts raw customer attributes in JSON format and executes an automated multi-step inference pipeline:
+
+
+            1. Ingests and converts the JSON payload into a structured Pandas DataFrame.
+            2. Dynamically aligns columns against the training feature schema, populating missing One-Hot dummy variables with zero-vectors to prevent runtime shape mismatches.
+            3. Applies the pre-fitted StandardScaler to continuous fields (tenure, MonthlyCharges, TotalCharges).
+            4. Generates class probabilities using model.predict_proba().
+            5. Computes cluster assignments using kmeans.predict().
+            6. Evaluates the predicted probability against risk thresholds to assign a qualitative risk tier (High for ≥65%, Medium for 35–64%, and Low for <35%).
+            7. Returns an actionable JSON response containing the prediction, probability, risk tier, cluster persona, and targeted business recommendation.
