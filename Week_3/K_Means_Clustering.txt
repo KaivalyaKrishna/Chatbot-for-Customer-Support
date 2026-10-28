@@ -1,0 +1,7 @@
+3. K-Means Clustering & Cluster Validation
+    To uncover natural groupings within the customer base without relying on pre-existing labels, 
+    K-Means clustering was executed across a range of cluster values (K=2 through K=8):
+        
+        The Elbow Method (Inertia Analysis): Tracked the Within-Cluster Sum of Squares (WCSS). A noticeable bend ("elbow") was observed between K=3 and K=4, beyond which reductions in inertia showed diminishing returns.
+        Silhouette Analysis: Evaluated cluster tightness versus separation distance. K=3 achieved strong silhouette separation without creating fragmented micro-clusters.
+        Optimal Selection (K=3): Selected K=3 as the optimal balance between mathematical cohesion and business interpretability.
