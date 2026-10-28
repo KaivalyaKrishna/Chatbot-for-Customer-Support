@@ -1,0 +1,4 @@
+7. Strategic Transition to Week 4
+
+    With customer clusters clearly defined and the champion Random Forest model tuned to peak discriminative performance, the technical groundwork is complete. 
+    Week 4 will focus on Model Serialization (joblib), building a production-ready FastAPI REST API, and finalizing the end-to-end Capstone deployment.
