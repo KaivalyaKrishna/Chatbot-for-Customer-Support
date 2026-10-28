@@ -1,0 +1,9 @@
+5. Hierarchical Agglomerative Clustering (Dendrogram Analysis)
+
+    To validate the cluster taxonomy discovered by K-Means, Hierarchical Clustering was implemented:
+
+        Used Ward’s minimum variance method (method='ward') based on Euclidean distances across customer profiles.
+        Visualized the cluster tree via a Dendrogram on a sample cohort of 50 customers.
+        The vertical height of the tree branches indicated significant dissimilarity between budget users and bundled premium users before final convergence into a single root, confirming the multi-group structure found by K-Means.
+
+
